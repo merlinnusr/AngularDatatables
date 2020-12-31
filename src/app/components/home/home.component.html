@@ -1,0 +1,19 @@
+<table datatable [dtOptions]="dtOptions" class="row-border hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>First name</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="users?.length != 0">
+        <tr *ngFor="let person of users" (click)="someClickHandler(person)">
+            <td>{{ person.id }}</td>
+            <td>{{ person.name }}</td>
+        </tr>
+    </tbody>
+    <tbody *ngIf="users?.length == 0">
+      <tr>
+        <td colspan="3" class="no-data-available">No data!</td>
+      </tr>
+    <tbody>
+  </table>
